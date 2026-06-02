@@ -1,0 +1,54 @@
+---
+import { profile } from "@data/profile";
+
+const navItems = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#productivity", label: "AI" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" }
+];
+---
+
+<header class="sticky top-0 z-20 border-b border-line/90 bg-white/90 backdrop-blur-xl">
+  <div class="container flex min-h-16 items-center justify-between gap-4">
+    <a class="font-bold" href="#top">{profile.name}</a>
+    <button
+      class="menu-toggle inline-flex h-11 w-11 flex-col items-center justify-center rounded-lg border border-line bg-white md:hidden"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Toggle navigation"
+    >
+      <span class="block h-0.5 w-5 bg-ink"></span>
+      <span class="mt-1.5 block h-0.5 w-5 bg-ink"></span>
+    </button>
+    <nav
+      id="site-nav"
+      class="site-nav absolute left-4 right-4 top-[calc(100%+0.5rem)] hidden flex-col gap-4 rounded-lg border border-line bg-white p-4 shadow-panel md:static md:flex md:flex-row md:items-center md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+      aria-label="Primary"
+    >
+      {navItems.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const siteNav = document.querySelector<HTMLElement>(".site-nav");
+
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>

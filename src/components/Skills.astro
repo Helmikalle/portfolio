@@ -1,0 +1,30 @@
+---
+import { skillGroups } from "@data/skills";
+---
+
+<section id="skills" class="section section-surface" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Skills</p>
+        <h2 id="skills-title" class="section-title">Technical focus areas</h2>
+      </div>
+      <p class="section-intro">
+        Grouped by the tools, platforms, and workflows most relevant to backend engineering and modern delivery
+        environments.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {
+        skillGroups.map((group) => (
+          <article class="panel">
+            <h3 class="card-title">{group.title}</h3>
+            <ul class="tag-list">
+              {group.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

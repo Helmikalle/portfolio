@@ -1,0 +1,30 @@
+---
+import { projects } from "@data/projects";
+---
+
+<section id="projects" class="section" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Selected Work</p>
+        <h2 id="projects-title" class="section-title">Production work across backend systems, cloud services, and AI tooling</h2>
+      </div>
+      <p class="section-intro">A focused view of client work and technical themes from recent professional experience.</p>
+    </div>
+    <div class="grid gap-4 lg:grid-cols-2">
+      {
+        projects.map((project) => (
+          <article class="overflow-hidden rounded-lg border border-line bg-white shadow-panel">
+            <div class="grid min-h-44 place-items-center border-b border-line bg-cloud-strong p-6 text-center font-semibold text-muted">
+              {project.eyebrow}
+            </div>
+            <div class="p-6">
+              <h3 class="card-title">{project.title}</h3>
+              <p class="leading-8 text-muted">{project.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+---
+import { profile } from "@data/profile";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line">
+  <div class="container flex min-h-16 items-center justify-between gap-4 text-muted">
+    <p>&copy; {year} {profile.name}</p>
+    <a class="text-link" href="#top">Back to top</a>
+  </div>
+</footer>

@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(21, 127, 103, 0.08), transparent 32%),
+      linear-gradient(180deg, #fbfdff 0%, #f5f8fc 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-[min(calc(100%_-_2rem),1180px)];
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .section-surface {
+    @apply border-y border-line/70 bg-white/55;
+  }
+
+  .section-header {
+    @apply mb-8 grid gap-5 lg:flex lg:items-end lg:justify-between;
+  }
+
+  .section-label,
+  .card-kicker {
+    @apply mb-3 text-sm font-bold uppercase text-accent;
+  }
+
+  .section-title {
+    @apply max-w-3xl text-4xl font-extrabold leading-tight tracking-normal sm:text-5xl;
+  }
+
+  .section-intro {
+    @apply max-w-xl text-base leading-8 text-muted;
+  }
+
+  .panel {
+    @apply rounded-lg border border-line bg-gradient-to-b from-white to-[#f9fbfd] p-6 shadow-panel;
+  }
+
+  .card-title {
+    @apply mb-4 text-xl font-bold;
+  }
+
+  .button-primary,
+  .button-secondary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg border px-4 font-semibold transition-colors;
+  }
+
+  .button-primary {
+    @apply border-accent bg-accent text-white hover:bg-accent-strong;
+  }
+
+  .button-secondary {
+    @apply border-line bg-white text-ink hover:border-accent/40;
+  }
+
+  .nav-link,
+  .text-link {
+    @apply text-muted transition-colors hover:text-ink;
+  }
+
+  .site-nav.open {
+    @apply flex;
+  }
+
+  .tag-list {
+    @apply flex flex-wrap gap-3;
+  }
+
+  .tag-list li {
+    @apply inline-flex min-h-10 items-center rounded-lg border border-line bg-cloud-strong px-3 font-semibold text-muted;
+  }
+}

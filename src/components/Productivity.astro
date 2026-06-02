@@ -1,0 +1,27 @@
+---
+import { productivityItems } from "@data/productivity";
+---
+
+<section id="productivity" class="section section-surface" aria-labelledby="productivity-title">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-label">AI & Developer Productivity</p>
+        <h2 id="productivity-title" class="section-title">Practical AI work for software teams</h2>
+      </div>
+      <p class="section-intro">
+        AI is treated as an engineering tool: useful when it improves feedback loops, code understanding, and delivery.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        productivityItems.map((item) => (
+          <article class="panel">
+            <h3 class="card-title">{item.title}</h3>
+            <p class="leading-8 text-muted">{item.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

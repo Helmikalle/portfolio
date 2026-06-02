@@ -1,0 +1,31 @@
+---
+import { experience } from "@data/experience";
+---
+
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Professional Experience</p>
+        <h2 id="experience-title" class="section-title">Over 8 years across development, agile leadership, architecture, and AI work</h2>
+      </div>
+      <p class="section-intro">Recent assignments and earlier backend development experience, summarized from the CV.</p>
+    </div>
+    <div class="grid gap-4">
+      {
+        experience.map((item) => (
+          <article class="panel grid gap-5 lg:grid-cols-[minmax(220px,0.7fr)_1fr]">
+            <div>
+              <h3 class="mb-2 text-lg font-bold">{item.role}</h3>
+              <p class="mb-2 text-muted">{item.company}</p>
+              <p class="text-muted">{item.period}</p>
+            </div>
+            <ul class="grid gap-3 leading-8 text-muted">
+              {item.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

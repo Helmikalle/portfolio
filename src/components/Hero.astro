@@ -1,0 +1,33 @@
+---
+import { profile } from "@data/profile";
+---
+
+<section class="section pt-20" aria-labelledby="hero-title">
+  <div class="container grid gap-8 lg:grid-cols-[1.25fr_0.95fr]">
+    <div class="max-w-3xl">
+      <p class="section-label">{profile.role}</p>
+      <h1 id="hero-title" class="text-5xl font-extrabold leading-none tracking-normal sm:text-6xl lg:text-7xl">
+        {profile.name}
+      </h1>
+      <p class="mt-4 text-xl font-semibold">{profile.title}</p>
+      <p class="mt-4 max-w-2xl text-lg leading-8 text-muted">{profile.summary}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="button-primary" href={`mailto:${profile.email}`}>Email</a>
+        <a class="button-secondary" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a class="button-secondary" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <aside class="grid gap-4" aria-label="Profile summary">
+      <div class="panel">
+        <p class="card-kicker">Core focus</p>
+        <ul class="list-disc space-y-3 pl-5 leading-8 text-muted">
+          {profile.focus.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="panel">
+        <p class="card-kicker">What this portfolio highlights</p>
+        <p class="leading-8 text-muted">{profile.highlights}</p>
+      </div>
+    </aside>
+  </div>
+</section>

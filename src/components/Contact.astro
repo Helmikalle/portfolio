@@ -1,0 +1,34 @@
+---
+import { profile } from "@data/profile";
+---
+
+<section id="contact" class="section section-surface" aria-labelledby="contact-title">
+  <div class="container grid gap-8 lg:grid-cols-[1fr_0.95fr]">
+    <div>
+      <p class="section-label">Contact</p>
+      <h2 id="contact-title" class="section-title">Open to technical discussions, engineering roles, and project conversations.</h2>
+      <div class="mt-6 grid gap-3">
+        <a class="text-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a class="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a class="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 class="card-title">Repository themes</h3>
+      <ul class="grid gap-4 text-muted">
+        <li>
+          <strong class="block text-ink">Java and Spring experiments</strong>
+          Backend services, API design, and maintainability-focused implementation work.
+        </li>
+        <li>
+          <strong class="block text-ink">AI-assisted development</strong>
+          Prompt engineering, GitHub Copilot workflows, and developer automation ideas.
+        </li>
+        <li>
+          <strong class="block text-ink">Infrastructure and tooling</strong>
+          Linux, AWS, CI/CD, and practical command-line workflows.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
