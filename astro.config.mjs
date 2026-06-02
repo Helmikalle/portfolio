@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://helmikalle.github.io",
-  base: "/portfolio",
+  site: "https://www.helminenkalle.fi",
+  base: "/",
   output: "static",
 });
