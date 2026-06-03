@@ -23,6 +23,23 @@ This file contains a growing ruleset that improves over time. **At session start
 - You hit a bug caused by a wrong assumption about this codebase
 - User states a preference ("always use X", "never do Y")
 
+---
+
+## Project Context Handoff
+
+Before starting work, read `PROJECT_CONTEXT.md` if it exists.
+
+At the end of each meaningful session, update `PROJECT_CONTEXT.md` with:
+
+- what changed
+- what was built, tested, or deployed
+- known issues or external follow-ups
+- next likely tasks
+
+Keep `PROJECT_CONTEXT.md` public-repo-safe. Do not include secrets, credentials, tokens, private client names, private employer details, provider account details, or unnecessary troubleshooting history.
+
+Keep permanent rules and user preferences in `AGENTS.md`. Keep current project state, deployment notes, and handoff context in `PROJECT_CONTEXT.md`.
+
 ### Rule format example
 
 ```
